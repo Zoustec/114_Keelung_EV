@@ -14,5 +14,5 @@ export default defineConfig({
     },
   },
   plugins: [react(), tailwindcss()],
-  base: '/114-keelungEV/', 
+  // base: '/114-keelungEV/', 
 });
