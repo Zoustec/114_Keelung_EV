@@ -11,7 +11,6 @@ import Download from "./pages/Download";
 import PolicyEffect from "./pages/PolicyEffect";
 import SuccessCase from "./pages/SuccessCase";
 import DMDownload from "./pages/DMDownload";
-import News from "./pages/News";
 import Seminar from "./pages/Seminar";
 import Training from "./pages/Training";
 import Lottery from "./pages/Lottery";
@@ -20,6 +19,7 @@ import ReactGA from 'react-ga';
 import {useEffect} from "react"
 
 ReactGA.initialize('G-F1NCGDVDSF');
+
 const routes = [
   { path: "/", breadcrumbName: "首頁", element: <Home /> },
   // 友善車行地圖
@@ -64,7 +64,6 @@ const routes = [
 ];
 
 // GA 初始化
-ReactGA.initialize('您的GA追蹤ID'); // 請替換為您實際的 GA 追蹤 ID
 
 // 用於追蹤路由變更的組件
 function GATracker() {
