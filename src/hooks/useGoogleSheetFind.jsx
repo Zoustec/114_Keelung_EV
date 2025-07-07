@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import axios from "axios";
 
 const GAS_BASE_URL =
-  "https://script.google.com/macros/s/AKfycbwy9t7Wt312t9I5l8MqeOhwXZM8BSx4bYm0qaz65PDn64XE9FlvWRD5PnagPISZMdZxYQ/exec";
+  "https://script.google.com/macros/s/AKfycbzIxwzTNGkEPPwT1aKRKOcP-Vbkz-nBw7VwhB5KZ1RZKP0RGOXXmLaYk3jSmv0mxrkevA/exec";
 
 const useGoogleSheetQuery = (baseUrl = GAS_BASE_URL) => {
   const [data, setData] = useState(null);
