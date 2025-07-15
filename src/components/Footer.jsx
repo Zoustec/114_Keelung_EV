@@ -18,9 +18,7 @@ function Footer() {
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <div>
-            <ReviewAmout type="all" />
-          </div>
+         
           <div
             className="flex w-full 
         justify-between
@@ -30,6 +28,9 @@ function Footer() {
             <LinkButton iconType="footer-line" alt="Facebook" />
 
             <LinkButton iconType="footer-ig" alt="Facebook" />
+          </div>
+           <div>
+            <ReviewAmout type="all" />
           </div>
         </div>
 

@@ -188,7 +188,7 @@ function Navbar({ routes }) {
       title: "活動快訊",
       link: "/news",
       subItems: [
-        { title: "座談會報名", link: "/seminar" },
+        { title: "座談會資訊", link: "/seminar" },
         { title: "培訓課程資訊", link: "/training" },
         { title: "抽獎活動資訊", link: "/lottery" },
       ],
@@ -198,7 +198,7 @@ function Navbar({ routes }) {
       title: "政策成效",
       link: "/policy-effect",
       subItems: [
-        { title: "轉型成效", link: "/policy-effect" },
+        { title: "車行轉型成效", link: "/policy-effect" },
         { title: "成功案例影片", link: "/success-case" },
         { title: "DM下載", link: "/dm-download" },
       ],

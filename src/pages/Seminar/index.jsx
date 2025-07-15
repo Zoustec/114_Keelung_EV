@@ -15,7 +15,7 @@ import LeaderShipIcon from "@/assets/icon/icon-leadership.svg";
 
 function Seminar() {
   const { data, loading, error } = useGoogleSheet({
-    range: "4-1座談會報名",
+    range: "4-1座談會資訊",
     sheetId,
   });
 

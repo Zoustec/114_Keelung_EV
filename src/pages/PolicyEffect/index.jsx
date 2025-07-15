@@ -424,7 +424,7 @@ function PolicyEffect() {
         <PageTitle
           icon={PolicyIcon}
           iconClassName="w-[24px] h-[32px]"
-          title="轉型成效數據"
+          title="車行轉型成效數據"
         />
         <div className="text-center py-10">
           <p className="text-gray-500">暫無數據</p>
@@ -568,7 +568,7 @@ function PolicyEffect() {
               </Row>
 
               {/* 其他圖表 */}
-              <Row gutter={[24, 24]} className="mb-8">
+              {/* <Row gutter={[24, 24]} className="mb-8">
                 <Col xs={24} lg={12}>
                   <ChartCard
                     title="申請平均核准日"
@@ -585,11 +585,11 @@ function PolicyEffect() {
                     }
                   />
                 </Col>
-              </Row>
+              </Row> */}
 
               {/* 堆疊圖表和品牌圓餅圖 */}
               <Row gutter={[24, 24]}>
-                <Col xs={24} lg={12}>
+                {/* <Col xs={24} lg={12}>
                   <ChartCard
                     title="各區核銷比例"
                     chartComponent={
@@ -599,7 +599,7 @@ function PolicyEffect() {
                       />
                     }
                   />
-                </Col>
+                </Col> */}
                 <Col xs={24} lg={12}>
                   <ChartCard
                     title="各品牌申請比例"

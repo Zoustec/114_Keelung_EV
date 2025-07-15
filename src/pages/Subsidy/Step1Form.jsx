@@ -424,10 +424,7 @@ const CarDealerForm = () => {
           <Form.Item
             label={<span className="text-base">負責人Email</span>}
             name="ownerEmail"
-            rules={[
-              { required: true, message: "請輸入負責人Email" },
-              { type: "email", message: "Email格式不正確" },
-            ]}
+         
           >
             <Input placeholder="example@email.com" />
           </Form.Item>
@@ -465,10 +462,7 @@ const CarDealerForm = () => {
           <Form.Item
             label={<span className="text-base">聯絡人Email</span>}
             name="contactEmail"
-            rules={[
-              { required: true, message: "請輸入聯絡人Email" },
-              { type: "email", message: "Email格式不正確" },
-            ]}
+        
           >
             <Input placeholder="example@email.com" />
           </Form.Item>

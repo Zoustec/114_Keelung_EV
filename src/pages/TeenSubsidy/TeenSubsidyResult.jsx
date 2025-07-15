@@ -179,11 +179,13 @@ const TeenSubsidyResult = ({ onBack, data }) => {
           <div className="flex">
             <div className="bg-[#D4F8F9] text-[#1B7183] px-3 py-2 md:px-6 md:py-8 flex items-center justify-center  min-w-[78px]  md:min-w-[120px]">
               <h2 className="text-xs md:text-base  font-bold text-center">
-                <span className="hidden md:inline">核准件數</span>
+                <span className="hidden md:inline">尚未請領件數</span>
                 <span className="md:hidden">
-                  核准
+                  尚未
                   <br />
-                  件數
+                  請領
+                  <br />
+                 件數
                 </span>
               </h2>
             </div>
@@ -194,11 +196,13 @@ const TeenSubsidyResult = ({ onBack, data }) => {
           <div className="flex">
             <div className="bg-[#D4F8F9] text-[#1B7183] px-3 py-2 md:px-6 md:py-8 flex items-center justify-center  min-w-[78px]  md:min-w-[120px]">
               <h2 className="text-xs md:text-base  font-bold text-center">
-                <span className="hidden md:inline">核准金額</span>
-                <span className="md:hidden">
-                  核准
+                <span className="hidden md:inline">尚未請領金額</span>
+               <span className="md:hidden">
+                  尚未
                   <br />
-                  金額
+                  請領
+                  <br />
+                 金額
                 </span>
               </h2>
             </div>
