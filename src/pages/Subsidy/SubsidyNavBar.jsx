@@ -1,5 +1,5 @@
 import React from "react";
-import RiderStep from "@/pages/RiderStep";
+import RiderStep from "@/pages/CarDealer/RiderStep";
 import { create } from "zustand";
 
 // Zustand store 管理按鈕狀態

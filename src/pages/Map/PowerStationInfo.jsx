@@ -14,8 +14,8 @@ import SYMLogo from "@/assets/MotorLogo/SYM.svg";
 import YAMAHALogo from "@/assets/MotorLogo/YAMAHA.svg";
 import ZauLogo from "@/assets/MotorLogo/Zau.svg";
 import PageTitle from "@/components/PageTitle";
-import Loading from "../components/Loading";
-import PageError from "../components/PageError";
+import Loading from "@/components/Loading";
+import PageError from "@/components/PageError";
 import BrandIcon from "@/assets/icon/icon-brand.svg";
 
 // Logo 對照表

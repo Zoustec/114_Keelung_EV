@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { create } from "zustand";
-import Rider from "../assets/img/rider.svg";
+import Rider from "@/assets/img/rider.svg";
 
 // Zustand store for managing step progress
 export const useStepStore = create((set) => ({

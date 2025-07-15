@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "@/components/PageTitle";
 import IconPDF from "@/assets/icon/icon-PDF.png";
 import { Row, Col } from "antd";
 
@@ -8,7 +8,7 @@ import FooterBgcImg from "@/components/FooterBgcImg";
 import { DownloadOutlined } from "@ant-design/icons";
 import useGoogleSheet from "@/hooks/useGoogleSheet";
 import Loading from "@/components/Loading";
-import PageError from "../components/PageError";
+import PageError from "@/components/PageError";
 const sheetId = import.meta.env.VITE_PowerStation_GogleSheet__ID;
 import DownloadIcon from "@/assets/icon/icon-download.svg";
 

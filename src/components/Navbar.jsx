@@ -9,9 +9,9 @@ import { BACKGROUND_COLOR } from "@/constants/styles";
 import ToogleUP from "@/assets/icon/icon-toogle-up.png";
 import ToogleDown from "@/assets/icon/icon-toogle-down.png";
 import LinkButton from "@/components/LinkButton";
-import MapStepSelect from "@/pages/MapStepSelect";
-import RiderStep from "@/pages/RiderStep";
-import SubsidyNavBar from "@/pages/SubsidyNavBar";
+import MapStepSelect from "@/pages/Map/MapStepSelect";
+import RiderStep from "@/pages/CarDealer/RiderStep";
+import SubsidyNavBar from "@/pages/Subsidy/SubsidyNavBar";
 
 // 麵包屑元件
 const Breadcrumb = ({ routes, location, menuItems, onNavigation }) => {

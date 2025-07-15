@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Form } from "antd";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "@/components/PageTitle";
 import TeenSubsidyResult from "./TeenSubsidyResult";
 import useGoogleSheetFind from "@/hooks/useGoogleSheetFind";
 import SearchImg from "@/assets/img/searchImg.svg";

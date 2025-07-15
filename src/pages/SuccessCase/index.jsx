@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "@/components/PageTitle";
 import { Row, Col } from "antd";
 import { useState } from "react";
 import FooterBgcImg from "@/components/FooterBgcImg";
 import useGoogleSheet from "@/hooks/useGoogleSheet";
 import Loading from "@/components/Loading";
-import PageError from "../components/PageError";
+import PageError from "@/components/PageError";
 const sheetId = import.meta.env.VITE_PowerStation_GogleSheet__ID;
 import VideoIcon from "@/assets/icon/icon-youtu.svg"; // 請替換為適合的影片圖標
 

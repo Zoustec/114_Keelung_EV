@@ -1,7 +1,7 @@
 import React from "react";
 import { useButtonStore } from "./SubsidyNavBar";
 import LinkButton from "@/components/LinkButton";
-import LineContact from "../components/LineContact";
+import LineContact from "@/components/LineContact";
 
 const KeelungSubsidyInfo = () => {
   const { setActiveButton } = useButtonStore();

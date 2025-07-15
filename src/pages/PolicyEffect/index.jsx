@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "@/components/PageTitle";
 import { Row, Col } from "antd";
 import FooterBgcImg from "@/components/FooterBgcImg";
 import useGoogleSheet from "@/hooks/useGoogleSheet";
 import Loading from "@/components/Loading";
-import PageError from "../components/PageError";
+import PageError from "@/components/PageError";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import DonutChart from "@/components/DonutChart";
 import DonutChartNone from "@/components/DonutChartNoneColor";
-import ChartCard from "../components/ChartCard";
+import ChartCard from "@/components/ChartCard";
 
 // 正確的模組導入方式
 import "highcharts/highcharts-more";

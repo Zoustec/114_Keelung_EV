@@ -17,7 +17,7 @@ import {
   Divider,
   InputNumber,
 } from "antd";
-import { useStepStore } from "@/pages/RiderStep";
+import { useStepStore } from "@/pages/CarDealer/RiderStep";
 import { QuestionCircleOutlined } from "@ant-design/icons";
 import TextSample from "@/assets/img/textSample.jpg";
 import TexSample1 from "@/assets/img/TexSample1.jpg";

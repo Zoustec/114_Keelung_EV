@@ -9,9 +9,9 @@ import {
   useMap,
 } from "@vis.gl/react-google-maps";
 import powerPinImg from "@/assets/img/powerpin.png";
-import { useStore } from "@/pages/MapStepSelect";
-import Loading from "../components/Loading";
-import PageError from "../components/PageError";
+import { useStore } from "./MapStepSelect";
+import Loading from "@/components/Loading";
+import PageError from "@/components/PageError";
 // 摩托車品牌 Logo imports
 
 import AeonmotorLogo from "@/assets/MotorLogo/icon/Aeonmotor.png";

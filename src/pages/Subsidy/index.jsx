@@ -6,11 +6,11 @@ import SubsidyIntroSearch from "@/assets/img/subsidyIntroSearch.svg";
 import Loading from "@/components/Loading";
 import PageError from "@/components/PageError";
 import Notfound from "@/pages/NotFound";
-import KeelungSubsidyInfo from "@/pages/KeelungSubsidyInfo";
+import KeelungSubsidyInfo from "./KeelungSubsidyInfo";
 import { useButtonStore } from "./SubsidyNavBar";
 import LineContact from "@/components/LineContact";
-import Step1Form from "@/pages/Step1Form";
-import SubsidyResult from "@/pages/SubsidyResult";
+import Step1Form from "./Step1Form";
+import SubsidyResult from "./SubsidyResult";
 
 const UniformNumberForm = ({
   onFinish,

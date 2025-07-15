@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PageTitle from "../components/PageTitle";
+import PageTitle from "@/components/PageTitle";
 import Iconapply from "@/assets/icon/icon-apply.png";
 import IconCalendar from "@/assets/icon/icon-calendar.png";
 import IconHuman from "@/assets/icon/icon-human.png";
@@ -11,7 +11,7 @@ import { useState } from "react";
 import FooterBgcImg from "@/components/FooterBgcImg";
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
 import RulesIcon from "@/assets/icon/icon-rules.svg";
-import LineContact from "../components/LineContact";
+import LineContact from "@/components/LineContact";
 
 function Description() {
   const [activeKeys, setActiveKeys] = useState({
