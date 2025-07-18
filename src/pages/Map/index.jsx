@@ -149,10 +149,9 @@ function parseMotorcycleShops(data) {
       }
     }
 
-    // 建立唯一識別碼來避免重複（使用店名+地址）
-    const uniqueId = `${shopName}_${address}`;
 
-    if (!processedShops.has(uniqueId) && shopName && district) {
+
+    if ( shopName && district) {
       shops.push({
         店名: shopName,
         行政區: district,
@@ -165,7 +164,7 @@ function parseMotorcycleShops(data) {
         lng
       });
 
-      processedShops.add(uniqueId);
+  
     }
   }
 
