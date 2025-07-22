@@ -240,6 +240,8 @@ const SubsidyResult = ({ onBack, data }) => {
                       ? "bg-[#888888]"
                       : getCurrentStatus(activeTab) === "需補件"
                       ? "bg-[#FFA500]"
+                      : getCurrentStatus(activeTab) === "尚有餘額"
+                      ? "bg-[#E6BD31]"
                       : "bg-none"
                   }`}
                 >

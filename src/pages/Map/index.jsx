@@ -112,9 +112,7 @@ function parseMotorcycleShops(data) {
     lat:headers.indexOf("lat"),
     lng:headers.indexOf("lng"),
   };
-  console.log(indexes)
   const shops = [];
-  const processedShops = new Set(); // 用來追蹤已處理的店家，避免重複
 
   for (const row of rowsData) {
     // 跳過空資料或明顯是重複標示的資料

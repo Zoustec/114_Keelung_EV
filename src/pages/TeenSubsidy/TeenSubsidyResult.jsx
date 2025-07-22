@@ -17,14 +17,14 @@ const TeenSubsidyResult = ({ onBack, data }) => {
     const [year, month] = selectedMonth.split("年");
     // 移除月份中的"月"字，並確保是數字格式
     const monthNumber = month.replace("月", "");
-    
-    const foundResult = sortedData.find(item => {
+
+    const foundResult = sortedData.find((item) => {
       const itemMonth = item["月份"].replace("月", "");
       const itemYear = item["年度"].toString();
-     
+
       return itemYear === year && itemMonth === monthNumber;
     });
-    
+
     return foundResult || sortedData[0] || {};
   };
 
@@ -97,6 +97,21 @@ const TeenSubsidyResult = ({ onBack, data }) => {
           </div>
           <div className="text-[#198DA1] flex-1 font-bold text-xs md:text-base px-4 py-3 md:px-10 md:py-8 rounded-r-lg shadow-[0_0_10px_rgba(0,0,0,0.1)]">
             {result?.["營利事業統一編碼*"]} {result?.["申請單位全名*"]}
+          </div>
+        </div>
+        <div className="flex mt-2">
+          <div className="bg-[#198da1]   text-white flex justify-center items-center py-2  md:py-8   min-w-[78px] md:min-w-[120px]   border-1 border-solid rounded-l-lg font-bold shadow-2xl text-[12px] md:text-base">
+            <span className="hidden md:inline">已請領件數</span>
+            <span className="md:hidden">
+              已請
+              <br />
+              領總
+              <br />
+              件數
+            </span>
+          </div>
+          <div className="text-[#198DA1] flex-1 flex items-center font-bold text-xs md:text-base px-4 py-3 md:px-10 md:py-8 rounded-r-lg shadow-[0_0_10px_rgba(0,0,0,0.1)]">
+            {sortedData.reduce((sum, item) => sum + parseInt(item["已請領件數"] || 0), 0)}
           </div>
         </div>
       </div>
@@ -177,7 +192,7 @@ const TeenSubsidyResult = ({ onBack, data }) => {
             </div>
           </div>
           <div className="flex">
-            <div className="bg-[#D4F8F9] text-[#1B7183] px-3 py-2 md:px-6 md:py-8 flex items-center justify-center  min-w-[78px]  md:min-w-[120px]">
+            <div className="bg-[#D4F8F9] text-[#1B7183] px-3 py-2  md:py-8 flex items-center justify-center  min-w-[78px]  md:max-w-[120px]  md:min-w-[120px]">
               <h2 className="text-xs md:text-base  font-bold text-center">
                 <span className="hidden md:inline">尚未請領件數</span>
                 <span className="md:hidden">
@@ -185,7 +200,7 @@ const TeenSubsidyResult = ({ onBack, data }) => {
                   <br />
                   請領
                   <br />
-                 件數
+                  件數
                 </span>
               </h2>
             </div>
@@ -194,15 +209,15 @@ const TeenSubsidyResult = ({ onBack, data }) => {
             </div>
           </div>
           <div className="flex">
-            <div className="bg-[#D4F8F9] text-[#1B7183] px-3 py-2 md:px-6 md:py-8 flex items-center justify-center  min-w-[78px]  md:min-w-[120px]">
+            <div className="bg-[#D4F8F9] text-[#1B7183] px-3 py-2  md:py-8 flex items-center justify-center  min-w-[78px] md:max-w-[120px]  md:min-w-[120px]">
               <h2 className="text-xs md:text-base  font-bold text-center">
                 <span className="hidden md:inline">尚未請領金額</span>
-               <span className="md:hidden">
+                <span className="md:hidden">
                   尚未
                   <br />
                   請領
                   <br />
-                 金額
+                  金額
                 </span>
               </h2>
             </div>
@@ -236,15 +251,14 @@ const TeenSubsidyResult = ({ onBack, data }) => {
                   </>
                 ) : month === 10 ? (
                   <span className="text-[#198DA1]">
-
-                    核銷期限為{year}年<span className="text-red-500 ">11、12月 1~10號</span>核銷
+                    核銷期限為{year}年
+                    <span className="text-red-500 ">11、12月 1~10號</span>核銷
                   </span>
                 ) : (
                   <span className="text-[#198DA1]">
-
-核銷期限為{year}年<span className="text-red-500 ">12月1~15號</span>核銷
-                </span>
-                  
+                    核銷期限為{year}年
+                    <span className="text-red-500 ">12月1~15號</span>核銷
+                  </span>
                 )}
               </div>
             </div>
@@ -262,13 +276,22 @@ const TeenSubsidyResult = ({ onBack, data }) => {
             </div>
             <div className="flex-1 bg-white px-6 py-4 md:px-15 md:py-6">
               <ul className="space-y-3">
-                {result?.["送件名單"]?.split(",")?.map((item, index) => (
-                  <li key={index} className="flex items-center text-gray-800">
-                    <span className="text-xs md:text-base font-bold ">
-                      {index + 1}.{item}
+                {result?.["送件名單"]?.split(",")?.filter((item) => item.trim())
+                  .length > 0 ? (
+                  result?.["送件名單"]?.split(",")?.map((item, index) => (
+                    <li key={index} className="flex items-center text-gray-800">
+                      <span className="text-xs md:text-base font-bold ">
+                        {index + 1}.{item}
+                      </span>
+                    </li>
+                  ))
+                ) : (
+                  <li className="flex items-center text-gray-800">
+                    <span className="text-xs md:text-base font-bold">
+                      已全數請領完畢
                     </span>
                   </li>
-                ))}
+                )}
               </ul>
             </div>
           </div>

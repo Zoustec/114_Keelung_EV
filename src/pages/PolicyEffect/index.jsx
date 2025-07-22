@@ -213,6 +213,12 @@ function processApiData(apiResponse) {
         percentage: parseInt(filteredValues[20][10]) || 0,
       },
     ],
+    // 9. 品牌數據
+    barndCount: [
+      { name: "單品牌", value: parseInt(filteredValues[24][2]) || 0 },
+      { name: "雙品牌", value: parseInt(filteredValues[24][3]) || 0 },
+      { name: "三品牌", value: parseInt(filteredValues[24][4]) || 0 },
+    ],
   };
 }
 
@@ -409,7 +415,6 @@ function PolicyEffect() {
 
   // 處理數據
   const processedData = data ? processApiData(data) : null;
-
   if (loading) {
     return <Loading />;
   }
@@ -567,39 +572,11 @@ function PolicyEffect() {
                 </Col>
               </Row>
 
-              {/* 其他圖表 */}
-              {/* <Row gutter={[24, 24]} className="mb-8">
-                <Col xs={24} lg={12}>
-                  <ChartCard
-                    title="申請平均核准日"
-                    chartComponent={
-                      <ColumnChart data={processedData.approvalDays} />
-                    }
-                  />
-                </Col>
-                <Col xs={24} lg={12}>
-                  <ChartCard
-                    title="核銷平均請領日"
-                    chartComponent={
-                      <ColumnChart data={processedData.claimDays} />
-                    }
-                  />
-                </Col>
-              </Row> */}
+             
 
               {/* 堆疊圖表和品牌圓餅圖 */}
               <Row gutter={[24, 24]}>
-                {/* <Col xs={24} lg={12}>
-                  <ChartCard
-                    title="各區核銷比例"
-                    chartComponent={
-                      <StackedColumnChart
-                        data={processedData.districtApproval}
-                        title="各區核銷比例"
-                      />
-                    }
-                  />
-                </Col> */}
+               
                 <Col xs={24} lg={12}>
                   <ChartCard
                     title="各品牌申請比例"
@@ -631,6 +608,14 @@ function PolicyEffect() {
                           },
                         ]}
                       />
+                    }
+                  />
+                </Col>
+                <Col xs={24} lg={12}>
+                  <ChartCard
+                    title="申請平均核准日"
+                    chartComponent={
+                      <ColumnChart data={processedData.barndCount} />
                     }
                   />
                 </Col>
