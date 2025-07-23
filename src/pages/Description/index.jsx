@@ -131,9 +131,9 @@ function Description() {
                     <p className="font-bold text-[12px] md:text-[16px]">
                       申請日期即日起至
                       <span className="text-red-500 text-base md:text-2xl">
-                        114年12月15日,如當年度預算用罄，本府得停止受理補助申請
+                        114年12月15日止
                       </span>
-                      止
+                      ,如當年度預算用罄，本府得停止受理補助申請
                     </p>
                   </div>
                 )}

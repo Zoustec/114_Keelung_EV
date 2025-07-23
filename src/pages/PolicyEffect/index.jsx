@@ -231,17 +231,17 @@ const ColumnChart = ({ data, color = "#42E82C" }) => {
     },
     title: {
       text: "123",
-
       style: {
         fontSize: "16px",
         fontWeight: "bold",
         color: "#374151",
-        visibility: "hidden", // 設置為隱藏
+        visibility: "hidden",
       },
     },
     xAxis: {
-      categories: data.map((item) => item.name),
-      crosshair: true,
+      type: "category",
+      // categories: ["單品牌", "雙品牌", "三品牌"],
+      // crosshair: true,
       labels: {
         style: {
           fontSize: "12px",
@@ -249,6 +249,7 @@ const ColumnChart = ({ data, color = "#42E82C" }) => {
         },
       },
     },
+
     yAxis: {
       min: 0,
       title: {
@@ -266,137 +267,49 @@ const ColumnChart = ({ data, color = "#42E82C" }) => {
     },
     plotOptions: {
       column: {
-        pointPadding: 0.2,
+        // pointPadding: 0.2,
         borderWidth: 0,
         color: color,
-        borderRadius: 3,
+        // borderRadius: 3,
+        // pointWidth: 30,
       },
     },
     series: [
       {
-        name: "已核准",
-        data: data.map((item) => item.value),
-        showInLegend: true,
-      },
+        name: '品牌數量',
+        colorByPoint: true,
+        data: [
+          {
+            name: "單品牌",
+            y: data[0].value,
+            color: "#2caffe",
+            drilldown: "單品牌"
+          },
+          {
+            name: "雙品牌",
+            y: data[1].value,
+            color: "#544fc5",
+            drilldown: "雙品牌"
+          },
+          {
+            name: "三品牌",
+            y: data[2].value,
+            color: "#fe6a35",
+            drilldown: "三品牌"
+          }
+        ]
+      }
     ],
+   
     legend: {
-      enabled: true,
+      enabled: false,
       align: "right",
       verticalAlign: "top",
       layout: "vertical",
-      borderWidth: 1, // 設置邊框寬度
-      borderColor: "#CCCCCC", // 設置邊框顏色
-      backgroundColor: "#FFFFFF", // 設置背景顏色
+      borderWidth: 1,
+      borderColor: "#CCCCCC",
+      backgroundColor: "#FFFFFF",
     },
-    credits: { enabled: false },
-  };
-
-  return (
-    <div className="bg-white rounded-lg p-6 shadow-md">
-      <HighchartsReact highcharts={Highcharts} options={chartOptions} />
-    </div>
-  );
-};
-
-// 堆疊長條圖組件
-const StackedColumnChart = ({ data, title }) => {
-  const chartOptions = {
-    chart: {
-      type: "column",
-      height: "350px",
-    },
-    title: {
-      text: title,
-      style: {
-        fontSize: "16px",
-        fontWeight: "bold",
-        color: "#374151",
-        visibility: "hidden", // 設置為隱藏
-      },
-    },
-    legend: {
-      enabled: true,
-      align: "right",
-      verticalAlign: "top",
-      // layout: "horizontal",
-      borderWidth: 1, // 設置邊框寬度
-      borderColor: "#CCCCCC", // 設置邊框顏色
-      backgroundColor: "#FFFFFF", // 設置背景顏色
-    },
-    xAxis: {
-      categories: data.map((item) => item.name),
-      labels: {
-        style: {
-          fontSize: "12px",
-          color: "#6B7280",
-        },
-      },
-    },
-    yAxis: {
-      min: 0,
-      title: {
-        text: "",
-        style: {
-          fontSize: "12px",
-          color: "#6B7280",
-        },
-      },
-      stackLabels: {
-        enabled: true,
-        style: {
-          fontWeight: "bold",
-          color: "#374151",
-        },
-      },
-    },
-
-    tooltip: {
-      headerFormat: "<b>{point.x}</b><br/>",
-      pointFormat:
-        '<span style="color:{point.color}">●</span> {series.name}: {point.y}筆<br/>',
-      footerFormat: "總計: {point.total}筆",
-      shared: true,
-      useHTML: true,
-    },
-    plotOptions: {
-      column: {
-        stacking: "normal",
-        dataLabels: {
-          enabled: false,
-        },
-        borderRadius: 2,
-      },
-    },
-    series: [
-      {
-        name: "申請中",
-        data: data.map((item) => item.inProgress),
-        color: "#42E82C",
-        dataLabels: {
-          enabled: true,
-          format: "{point.y}",
-          style: {
-            fontSize: "12px",
-            fontWeight: "bold",
-            color: "#374151",
-          },
-        },
-      },
-      {
-        name: "已核銷",
-        data: data.map((item) => item.completed),
-        color: "#19A4B4",
-        dataLabels: {
-          enabled: true,
-          format: "{point.y}",
-          style: {
-            fontSize: "12px",
-            fontWeight: "bold",
-            color: "#374151",
-          },
-        },
-      },
-    ],
     credits: { enabled: false },
   };
 
@@ -572,11 +485,8 @@ function PolicyEffect() {
                 </Col>
               </Row>
 
-             
-
               {/* 堆疊圖表和品牌圓餅圖 */}
               <Row gutter={[24, 24]}>
-               
                 <Col xs={24} lg={12}>
                   <ChartCard
                     title="各品牌申請比例"
@@ -613,7 +523,7 @@ function PolicyEffect() {
                 </Col>
                 <Col xs={24} lg={12}>
                   <ChartCard
-                    title="申請平均核准日"
+                    title="單/雙/三品牌"
                     chartComponent={
                       <ColumnChart data={processedData.barndCount} />
                     }

@@ -184,6 +184,10 @@ const TeenSubsidyResult = ({ onBack, data }) => {
                     ? "bg-[#19A4B4]"
                     : result?.["申請進度"] === "已逾期"
                     ? "bg-[#595959]"
+                    : result?.["申請進度"] === "未請領"
+                    ? "bg-[#1E692B]"
+                    : result?.["申請進度"] === "補件中"
+                    ? "bg-[#E66731]"
                     : "bg-[#14C200]"
                 }`}
               >
